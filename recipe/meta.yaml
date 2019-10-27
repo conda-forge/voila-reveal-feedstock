@@ -1,5 +1,5 @@
 {% set name = "voila-reveal" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7ba8fea771db42eb2ded689d83b60e3846aa827161701b6e8b0ad738c535acc6
+  sha256: 9cb7e91908dbb54a99f4242e6c5344b9700d512e6b668dda70c733574c8e4bfc
 
 build:
   noarch: python
