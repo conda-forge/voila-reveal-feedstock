@@ -1,5 +1,5 @@
 {% set name = "voila-reveal" %}
-{% set version = "0.0.2" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9cb7e91908dbb54a99f4242e6c5344b9700d512e6b668dda70c733574c8e4bfc
+  sha256: 155d3e717ec87b7cba5eabd504e6486c1d94719fc7183a78ab6f5d432612c75f
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,7 +31,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Reveal template for voila'
+  summary: Reveal template for voila
 
 extra:
   recipe-maintainers:
