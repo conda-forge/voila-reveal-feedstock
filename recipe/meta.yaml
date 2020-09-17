@@ -1,5 +1,5 @@
 {% set name = "voila-reveal" %}
-{% set version = "0.0.2" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9cb7e91908dbb54a99f4242e6c5344b9700d512e6b668dda70c733574c8e4bfc
+  sha256: 155d3e717ec87b7cba5eabd504e6486c1d94719fc7183a78ab6f5d432612c75f
 
 build:
   noarch: python
@@ -20,11 +20,11 @@ requirements:
     - pip
   run:
     - python
-    - voila >=0.1.15,<0.2
+    - voila >=0.2.1,<0.3
 
 test:
   commands:
-    - test -f "${PREFIX}/share/jupyter/voila/templates/reveal/nbconvert_templates/voila.tpl"  # [unix]
+    - test -f "${PREFIX}/share/jupyter/voila/templates/reveal/index.html.j2"  # [unix]
 
 about:
   home: https://github.com/voila-dashboards/voila-reveal
