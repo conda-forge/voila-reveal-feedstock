@@ -6,23 +6,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 6361988b96723574c94c50ba465831365a0a5b07e3a4b06d95e6551c627afab5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - voila >=0.2.1,<0.3
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f "${PREFIX}/share/jupyter/voila/templates/reveal/index.html.j2"  # [unix]
 
